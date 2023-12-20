@@ -133,13 +133,18 @@ Edit the following placeholders in recipe template.
 
 ## Step by Step Guide
 
-#### Step 1
-
-![Alt text](image-1.png)
+### Step 1
 
 Clone this repository.
 
-#### Step 2
+![Alt text](image-1.png)
+
+
+### Step 2
+
+Create S3 bucket and upload artifacts folder. 
+Make sure to select ACLs enabled while creating bucket.
+Now copy S3 URI of client_kepware.py by navigating into "artifacts/com.Simform.Kepware/1.0.0/"
 
 ![Alt text](image-4.png)
 
@@ -147,13 +152,8 @@ Clone this repository.
 
 ![Alt text](image-6.png)
 
-Create S3 bucket and upload artifacts folder. 
-Make sure to select ACLs enabled while creating bucket.
-Now copy S3 URI of client_kepware.py by navigating into "artifacts/com.Simform.Kepware/1.0.0/"
 
-#### Step 3
-
-![Alt text](image-7.png)
+### Step 3
 
 Create greengrass component. 
 Copy recipe from recipe/com.Simform.Kepware-1.0.0.json given in repository or copy it from this readme file in example section.
@@ -171,7 +171,10 @@ Here are all the parameters (refer Recipe configuration for detailed information
     - `<device_name>`
     - `<parameters>`
 
-#### Step 4
+![Alt text](image-7.png)
+
+
+### Step 4
 
 Now component is ready to be deployed in core device.
 
