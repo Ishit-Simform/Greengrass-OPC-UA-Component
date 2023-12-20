@@ -79,7 +79,12 @@
       "Lifecycle": {
         "install": "python3 -m pip install --user awsiotsdk asyncua==1.0.5 pyopenssl==23.3.0 cryptography==41.0.5",
         "run": "python3 -u {artifacts:path}/client_kepware.py '{configuration:/devices}' '{configuration:/kepware_name}' '{configuration:/kepware_endpoint}' '{configuration:/policy}' '{configuration:/security_mode}' '{configuration:/certificate_path}' '{configuration:/privatekey_path}' '{configuration:/topic}'"
-      }
+      },
+      "Artifacts": [
+				{
+					"URI": "s3://EXAMPLE_BUCKET/artifacts/com.example.HelloWorld/1.0.0/hello_world.py"
+				}
+			]
     },
     {
       "Platform": {
@@ -88,7 +93,12 @@
       "Lifecycle": {
         "install": "py -3 -m pip install --user awsiotsdk asyncua==1.0.5 pyopenssl==23.3.0 cryptography==41.0.5",
         "run": "py -3 -u {artifacts:path}/client_kepware.py '{configuration:/devices}' '{configuration:/kepware_name}' '{configuration:/kepware_endpoint}' '{configuration:/policy}' '{configuration:/security_mode}' '{configuration:/certificate_path}' '{configuration:/privatekey_path}' '{configuration:/topic}'"
-      }
+      },
+      "Artifacts": [
+				{
+					"URI": "s3://EXAMPLE_BUCKET/artifacts/com.example.HelloWorld/1.0.0/hello_world.py"
+				}
+			]
     }
   ]
 }
