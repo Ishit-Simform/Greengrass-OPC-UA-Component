@@ -131,7 +131,10 @@ Edit the following placeholders in recipe template.
 }
 ```
 
+
+
 ## Step by Step Guide
+
 
 ### Step 1
 
@@ -143,8 +146,8 @@ Clone this repository.
 ### Step 2
 
 Create S3 bucket, go to permissions and then edit bucket policy.
-```
 Bucket policy:
+```
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -158,22 +161,19 @@ Bucket policy:
     ]
 }
 ```
+![Alt text](image-10.png)
 
-Now upload artifacts folder and copy S3 URI of client_kepware.py by navigating into "artifacts/com.Simform.Kepware/1.0.0/"
+Now upload artifacts folder and copy S3 URI of client_kepware.py by navigating to "artifacts/com.Simform.Kepware/1.0.0/"
 
 ![Alt text](image-5.png)
 
 ![Alt text](image-6.png)
 
-![Alt text](image-9.png)
-
-![Alt text](image-10.png)
-
 
 ### Step 3
 
 Create greengrass component. 
-Copy recipe from recipe/com.Simform.Kepware-1.0.0.json given in repository or copy it from this readme file in example section.
+Copy the recipe from either the 'recipe' directory in this repository or the example section in this README file.
 
 Note: Remember to configure all the parameters in recipe before creating component.
 Here are all the parameters (refer Recipe configuration for detailed information)
