@@ -142,15 +142,31 @@ Clone this repository.
 
 ### Step 2
 
-Create S3 bucket and upload artifacts folder. 
-Make sure to select ACLs enabled and uncheck "Block all public access" while creating bucket.
-Now copy S3 URI of client_kepware.py by navigating into "artifacts/com.Simform.Kepware/1.0.0/"
+Create S3 bucket, go to permissions and then edit bucket policy.
 
-![Alt text](image-8.png)
+Bucket policy:
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PublicReadGetObject",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::greengrass-opc-ua-component/*"
+        }
+    ]
+}
+
+Now upload artifacts folder and copy S3 URI of client_kepware.py by navigating into "artifacts/com.Simform.Kepware/1.0.0/"
 
 ![Alt text](image-5.png)
 
 ![Alt text](image-6.png)
+
+![Alt text](image-9.png)
+
+![Alt text](image-10.png)
 
 
 ### Step 3
