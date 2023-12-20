@@ -53,45 +53,6 @@
             "Lease string detector",
             "Accumulator Motor"            
           ]
-        },
-        {
-          "device_name": "Device3",          
-          "parameters": [
-            "Dancer Position",
-            "Beam Length Meter",
-            "Speed",
-            "Comb Acentric",
-            "Strummer",
-            "Air blower",
-            "Lease string detector",
-            "Accumulator Motor"            
-          ]
-        },
-        {
-          "device_name": "Device4",          
-          "parameters": [
-            "Dancer Position",
-            "Beam Length Meter",
-            "Speed",
-            "Comb Acentric",
-            "Strummer",
-            "Air blower",
-            "Lease string detector",
-            "Accumulator Motor"            
-          ]
-        },
-        {
-          "device_name": "Device5",          
-          "parameters": [
-            "Dancer Position",
-            "Beam Length Meter",
-            "Speed",
-            "Comb Acentric",
-            "Strummer",
-            "Air blower",
-            "Lease string detector",
-            "Accumulator Motor"            
-          ]
         }
       ],
       "accessControl": {
