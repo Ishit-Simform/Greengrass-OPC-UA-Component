@@ -140,7 +140,7 @@ Edit the following placeholders in recipe template.
 
 Clone this repository.
 
-![Alt text](image-1.png)
+![Alt text](images/image-1.png)
 
 
 ### Step 2
@@ -161,13 +161,13 @@ Bucket policy:
     ]
 }
 ```
-![Alt text](image-10.png)
+![Alt text](images/image-10.png)
 
 Now upload artifacts folder and copy S3 URI of client_kepware.py by navigating to "artifacts/com.Simform.Kepware/1.0.0/"
 
-![Alt text](image-5.png)
+![Alt text](images/image-5.png)
 
-![Alt text](image-6.png)
+![Alt text](images/image-6.png)
 
 
 ### Step 3
@@ -188,7 +188,7 @@ Here are all the parameters (refer Recipe configuration for detailed information
     - `<device_name>`
     - `<parameters>`
 
-![Alt text](image-11.png)
+![Alt text](images/image-11.png)
 
 
 ### Step 4
