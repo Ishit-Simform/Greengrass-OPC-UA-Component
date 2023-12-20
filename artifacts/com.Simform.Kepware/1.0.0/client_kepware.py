@@ -43,12 +43,12 @@ def check_internet_connection():
 # Main function
 async def starter():
     # Check if the correct number of command line arguments is provided
-    if len(sys.argv) < 8:
-        print("Usage: python script.py <json_data> <kepware_name> <kepware_endpoint> <policy> <security_mode> <certificate_path> <privatekey_path>")
+    if len(sys.argv) < 9:
+        print("Usage: python script.py <json_data> <kepware_name> <kepware_endpoint> <policy> <security_mode> <certificate_path> <privatekey_path> <topic>")
         sys.exit(1)
  
     # Parse command line arguments
-    json_data, kepware_name, kepware_endpoint, policy, security_mode, certificate_path, privatekey_path = sys.argv[1:8]    
+    json_data, kepware_name, kepware_endpoint, policy, security_mode, certificate_path, privatekey_path, topic= sys.argv[1:9]    
     
     # Load JSON data
     recipe_data = json.loads(json_data)
@@ -82,7 +82,8 @@ async def starter():
 
                         # Prepare payload for AWS IoT Core
                         payload_dict = {}
-                        for count, device in enumerate(recipe_data):
+                        count = 0
+                        for device in recipe_data:
                             payload_dict['device'] = device['device_name']
                             for parameter in device['parameters']:
                                 payload_dict[parameter] = tag_data[count]
@@ -93,7 +94,7 @@ async def starter():
 
                             # Publish payload to AWS IoT Core
                             try:
-                                await publish_to_aws(clientV2.GreengrassCoreIPCClientV2(), "my/topic", 0, payload)                    
+                                await publish_to_aws(clientV2.GreengrassCoreIPCClientV2(), topic, 0, payload)                    
                             except Exception as e:
                                 logging.error(f"An error occurred: {e}")
                             payload_dict.clear()
@@ -111,10 +112,14 @@ async def starter():
                     disconnected_or_reinitializedor_or_unavailable = True
                     logging.error("Server disconnected, reinitialized, or unavailable.")
                     logging.error(f"An error occurred: {e}")
-                    error_payload_dict = {"error": "Server disconnected, reinitialized, or unavailable"}
-                    error_payload = json.dumps(error_payload_dict)
+                    if str(e) == "Connection is closed":
+                        error_payload_dict = {"error": "Server disconnected, reinitialized, or unavailable"}
+                        error_payload = json.dumps(error_payload_dict)
+                    else:
+                        error_payload_dict = {"error": str(e)}
+                        error_payload = json.dumps(error_payload_dict)
                     try:
-                        await publish_to_aws(clientV2.GreengrassCoreIPCClientV2(), "my/topic", 0, error_payload)                    
+                        await publish_to_aws(clientV2.GreengrassCoreIPCClientV2(), topic, 0, error_payload)                    
                     except Exception as e:
                         logging.error(f"An error occurred: {e}")
 

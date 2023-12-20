@@ -11,7 +11,8 @@
       "certificate_path": "/home/pi/certificate-example.der",
       "privatekey_path": "/home/pi/private-key-example.pem",
       "kepware_endpoint": "opc.tcp://127.0.0.1:49320/KEPServerEX/", 
-      "kepware_name": "PLC_simulator_script",      
+      "kepware_name": "PLC_simulator_script",  
+      "topic": "my/topic",    
       "devices": [
         {
           "device_name": "Device1",          
@@ -116,7 +117,7 @@
       },
       "Lifecycle": {
         "install": "python3 -m pip install --user awsiotsdk asyncua==1.0.5 pyopenssl==23.3.0 cryptography==41.0.5",
-        "run": "python3 -u {artifacts:path}/client_kepware.py '{configuration:/devices}' '{configuration:/kepware_name}' '{configuration:/kepware_endpoint}' '{configuration:/policy}' '{configuration:/security_mode}' '{configuration:/certificate_path}' '{configuration:/privatekey_path}'"
+        "run": "python3 -u {artifacts:path}/client_kepware.py '{configuration:/devices}' '{configuration:/kepware_name}' '{configuration:/kepware_endpoint}' '{configuration:/policy}' '{configuration:/security_mode}' '{configuration:/certificate_path}' '{configuration:/privatekey_path}' '{configuration:/topic}'"
       }
     },
     {
@@ -125,7 +126,7 @@
       },
       "Lifecycle": {
         "install": "py -3 -m pip install --user awsiotsdk asyncua==1.0.5 pyopenssl==23.3.0 cryptography==41.0.5",
-        "run": "py -3 -u {artifacts:path}/client_kepware.py '{configuration:/devices}' '{configuration:/kepware_name}' '{configuration:/kepware_endpoint}' '{configuration:/policy}' '{configuration:/security_mode}' '{configuration:/certificate_path}' '{configuration:/privatekey_path}'"
+        "run": "py -3 -u {artifacts:path}/client_kepware.py '{configuration:/devices}' '{configuration:/kepware_name}' '{configuration:/kepware_endpoint}' '{configuration:/policy}' '{configuration:/security_mode}' '{configuration:/certificate_path}' '{configuration:/privatekey_path}' '{configuration:/topic}'"
       }
     }
   ]
