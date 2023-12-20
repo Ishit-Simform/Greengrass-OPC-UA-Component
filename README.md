@@ -145,7 +145,7 @@ Clone this repository.
 
 ### Step 2
 
-Create S3 bucket, go to permissions and then edit bucket policy.
+Create S3 bucket -> go to permissions and then edit bucket policy.
 Bucket policy:
 ```
 {
@@ -188,7 +188,7 @@ Here are all the parameters (refer Recipe configuration for detailed information
     - `<device_name>`
     - `<parameters>`
 
-![Alt text](image-7.png)
+![Alt text](image-11.png)
 
 
 ### Step 4
