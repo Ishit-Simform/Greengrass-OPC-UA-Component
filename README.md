@@ -143,7 +143,7 @@ Clone this repository.
 ### Step 2
 
 Create S3 bucket, go to permissions and then edit bucket policy.
-
+```
 Bucket policy:
 {
     "Version": "2012-10-17",
@@ -157,6 +157,7 @@ Bucket policy:
         }
     ]
 }
+```
 
 Now upload artifacts folder and copy S3 URI of client_kepware.py by navigating into "artifacts/com.Simform.Kepware/1.0.0/"
 
