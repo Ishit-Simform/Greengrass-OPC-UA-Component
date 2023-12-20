@@ -143,10 +143,10 @@ Clone this repository.
 ### Step 2
 
 Create S3 bucket and upload artifacts folder. 
-Make sure to select ACLs enabled while creating bucket.
+Make sure to select ACLs enabled and uncheck "Block all public access" while creating bucket.
 Now copy S3 URI of client_kepware.py by navigating into "artifacts/com.Simform.Kepware/1.0.0/"
 
-![Alt text](image-4.png)
+![Alt text](image-8.png)
 
 ![Alt text](image-5.png)
 
